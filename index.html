@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Weather Dashboard</h1>
+        <h1>🌤️ Weather Dashboard</h1>
+        <p>
+            Check the current weather of any city
+        </p>
         <div class="search-box">
-            <input type="text" id="cityInput" placeholder="Enter city name">
-            <button>Search</button>
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city name"
+                >
+            <button onclick="getWeather()">
+                Search
+            </button>
         </div>
         <div class="weather-card">
-            <h2 id="cityName">City Name</h2>
-            <div class="weather-icon" id="weatherIcon">🌤️</div>
-            <h3 id="temperature">-- °C</h3>
-            <p id="condition">Weather Condition</p>
+            <h2 id="name">
+                 City
+            </h2>
+            <div class="weather-icon" id="icon">
+                🌤️
+            </div>
+            <h3 id="temp">
+                -- °C
+            </h3>
+            <p id="weather">
+                Current Weather
+            </p>
             <div class="details">
-                <p> Humidity: <span id="humidity">--</span>%</p>
-                <p> Wind Speed: <span id="wind">--</span> km/h</p>
+                <div class="detail-box">
+                    <span class="emoji">💧</span>
+                    <span id="humidity">
+                        --%
+                    </span>
+                    <small>
+                        Humidity
+                    </small>
+                </div>
+                <div class="detail-box">
+                    <span class="emoji">🌡️</span>
+                    <span id="feels">
+                        -- °C
+                    </span>
+                    <small>
+                        Feels Like
+                    </small>
+                </div>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
