@@ -1,60 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🌤️ Weather Dashboard</h1>
-        <p>
-            Check the current weather of any city
-        </p>
-        <div class="search-box">
-            <input
-                type="text"
-                id="city"
-                placeholder="Enter city name"
-                >
-            <button onclick="getWeather()">
-                Search
-            </button>
-        </div>
-        <div class="weather-card">
-            <h2 id="name">
-                 City
-            </h2>
-            <div class="weather-icon" id="icon">
-                🌤️
+<header>
+    <h1>🌤️ Weather Dashboard</h1>
+    <p>Check current weather of any city</p>
+</header>
+<main>
+    <section class="search">
+        <form id="form">
+            <label>Enter City Name</label>
+            <div class="searchbar">
+                <input id="city" placeholder="Enter city name">
+                <select id="unit">
+                    <option value="celsius">°C</option>
+                    <option value="fahrenheit">°F</option>
+                </select>
+                <button>Search</button>
             </div>
-            <h3 id="temp">
-                -- °C
-            </h3>
-            <p id="weather">
-                Current Weather
-            </p>
-            <div class="details">
-                <div class="detail-box">
-                    <span class="emoji">💧</span>
-                    <span id="humidity">
-                        --%
-                    </span>
-                    <small>
-                        Humidity
-                    </small>
-                </div>
-                <div class="detail-box">
-                    <span class="emoji">🌡️</span>
-                    <span id="feels">
-                        -- °C
-                    </span>
-                    <small>
-                        Feels Like
-                    </small>
-                </div>
+        </form>
+    </section>
+    <p id="status"></p>
+    <section class="card">
+        <h2 id="name">Search a City</h2>
+        <div id="icon">🌤️</div>
+        <h3 id="temp">-- °C</h3>
+        <p id="condition">Weather Condition</p>
+        <div class="details">
+            <div>
+                💧
+                <b id="humidity">--%</b>
+                <small>Humidity</small>
+            </div>
+            <div>
+                💨
+                <b id="wind">-- km/h</b>
+                <small>Wind</small>
             </div>
         </div>
-    </div>
-    <script src="script.js"></script>
+    </section>
+    <section class="history">
+        <div class="history-head">
+            <h2>Search History</h2>
+            <button id="clear">Clear</button>
+        </div>
+        <ul id="list"></ul>
+    </section>
+</main>
+<script src="script.js"></script>
 </body>
 </html>
